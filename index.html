@@ -1,36 +1,862 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <meta http-equiv="X-UA-Compatible" content="ie=edge">
-    <title>dd</title>
-    <link rel = "stylesheet" href = "D:/softdev/node_modules/bootstrap/dist/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0-alpha.6/css/bootstrap.min.css"
+        integrity="sha384-rwoIResjU2yc3z8GV/NPeZWAv56rSmLldC3R/AZzGRnGxQQKnKkoFVhFQhNUwEyJ" crossorigin="anonymous">
+    <link href="https://fonts.googleapis.com/css2?family=Mitr:wght@300&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Fredoka+One&display=swap" rel="stylesheet">
+    <title>Document</title>
+    <style>
+        body {
+            font-family: 'Mitr', sans-serif;
+            background-image: url("images.png");
+
+        }
+
+        #title {
+            text-align: center;
+            font-family: 'Fredoka One', cursive;
+            font-size: 65px;
+        }
+
+        .vending {
+            border-radius: 10px;
+            position: absolute;
+            top: 75px;
+            left: 10px;
+            width: 500px;
+            height: 920px;
+            z-index: -1;
+        }
+
+        .press {
+            position: absolute;
+            font-family: 'Mitr', sans-serif;
+            border: none;
+            padding-top: 5px;
+            padding-bottom: 5px;
+            padding-left: 10px;
+            padding-right: 10px;
+
+        }
+
+        .one {
+            top: 372px;
+            left: 76px;
+        }
+
+        .two {
+            top: 372px;
+            left: 185px;
+        }
+
+        .three {
+            top: 530px;
+            left: 76px;
+        }
+
+        .four {
+            top: 530px;
+            left: 175px;
+        }
+
+        .five {
+            top: 530px;
+            left: 278px;
+        }
+
+        .six {
+            top: 689px;
+            left: 68px;
+        }
+
+        .seven {
+            top: 689px;
+            left: 156px;
+        }
+
+        .eight {
+            top: 689px;
+            left: 248px;
+        }
+
+        .nine {
+            top: 689px;
+            left: 327px;
+        }
+
+        .ten {
+            top: 689px;
+            left: 406px;
+        }
+
+        .eleven {
+            top: 847px;
+            left: 74px;
+        }
+
+        .twelve {
+            top: 847px;
+            left: 172px;
+        }
+
+        .guide {
+            position: absolute;
+            top: 245px;
+            left: 520px;
+            font-family: 'Mitr', sans-serif;
+        }
+
+        .member {
+            position: absolute;
+            top: 75px;
+            left: 520px;
+        }
+
+        .detailmem {
+            position: absolute;
+            top: 113px;
+            left: 520px;
+        }
+
+        #howto {
+            border-radius: 10px;
+            position: absolute;
+            top: 245px;
+            left: 600px;
+            width: 300px;
+            height: 630px;
+        }
+
+        #close {
+            position: absolute;
+            top: 255px;
+            left: 870px;
+            width: 20px;
+            height: 20px;
+        }
+
+        #input {
+            position: absolute;
+            top: 135px;
+            left: 870px;
+            font-family: 'Fredoka One', cursive;
+        }
+
+        .form-control {
+            position: absolute;
+            top: 125px;
+            left: 965px;
+            width: 250px;
+            font-size: 30px;
+            font-family: 'Fredoka One', cursive;
+        }
+
+        #submitInput {
+            position: absolute;
+            top: 125px;
+            left: 1220px;
+            font-size: 20px;
+            padding-left: 10px;
+            padding-right: 10px;
+            padding-top: 13.5px;
+            padding-bottom: 13.5px;
+            font-family: 'Mitr', sans-serif;
+        }
+
+        #dfa {
+            position: absolute;
+            top: 300px;
+            left: 700px;
+            font-size: 30px;
+            font-family: 'Fredoka One', cursive;
+            z-index: -1;
+        }
+
+        .picdfa {
+            position: absolute;
+            top: 350px;
+            left: 520px;
+            z-index: -1;
+            width: 830px;
+            height: 650px;
+        }
+
+        .Cancel {
+            position: absolute;
+            font-family: 'Mitr', sans-serif;
+            top: 200px;
+            left: 405px;
+            font-size: 12px;
+            padding: 8px;
+        }
+
+        .Confirm {
+            position: absolute;
+            font-family: 'Mitr', sans-serif;
+            top: 200px;
+            left: 298px;
+            font-size: 12px;
+            padding: 8px;
+
+        }
+
+        .display {
+            position: absolute;
+            font-size: 15px;
+        }
+
+        #selNoodle {
+            top: 132px;
+            left: 60px;
+        }
+
+        #selFav {
+            top: 152px;
+            left: 60px;
+        }
+
+        #selOpt1 {
+            top: 172px;
+            left: 60px;
+        }
+
+        #selOpt2 {
+            top: 192px;
+            left: 60px;
+        }
+
+        #selBoil {
+            top: 212px;
+            left: 60px;
+        }
+        .zoomin{
+            position: absolute;
+            top: 360px;
+            left: 1300px;
+            width: 30px;
+            height: 30px;
+        }
+        .zoomout{
+            position: absolute;
+            top: 10px;
+            left: 1300px;
+            width: 30px;
+            height: 30px;
+        }
+        #block4{
+            background-color: white;
+        }
+    </style>
 </head>
+
 <body>
-    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css" integrity="sha384-ggOyR0iXCbMQv3Xipma34MD+dH/1fQ784/j6cY/iJTQUOhcWr7x9JvoRxT2MZw1T" crossorigin="anonymous">
+    <div id="block1">
+        <img class="vending" src="Noodles ver3.jpg" alt="vending machine">
+        <button type="button" class="btn btn-secondary press one" disabled>กด</button>
+        <button type="button" class="btn btn-secondary press two" disabled>กด</button>
+        <button type="button" class="btn btn-secondary press three" disabled>กด</button>
+        <button type="button" class="btn btn-secondary press four" disabled>กด</button>
+        <button type="button" class="btn btn-secondary press five" disabled>กด</button>
+        <button type="button" class="btn btn-secondary press six" disabled>กด</button>
+        <button type="button" class="btn btn-secondary press seven" disabled>กด</button>
+        <button type="button" class="btn btn-secondary press eight" disabled>กด</button>
+        <button type="button" class="btn btn-secondary press nine" disabled>กด</button>
+        <button type="button" class="btn btn-secondary press ten" disabled>กด</button>
+        <button type="button" class="btn btn-secondary press eleven" disabled>กด</button>
+        <button type="button" class="btn btn-secondary press twelve" disabled>กด</button>
+
+        <button type="button" id="one" onclick="Noodles('A',0)" class="btn btn-primary press one">กด</button>
+        <button type="button" id="two" onclick="Noodles('B',0)" class="btn btn-primary press two">กด</button>
+        <button type="button" id="three" onclick="Noodles('C',0)" class="btn btn-primary press three" hidden>กด</button>
+        <button type="button" id="four" onclick="Noodles('D',0)" class="btn btn-primary press four" hidden>กด</button>
+        <button type="button" id="five" onclick="Noodles('E',0)" class="btn btn-primary press five" hidden>กด</button>
+        <button type="button" id="six" onclick="Noodles('F',0)" class="btn btn-primary press six" hidden>กด</button>
+        <button type="button" id="seven" onclick="Noodles('G',0)" class="btn btn-primary press seven" hidden>กด</button>
+        <button type="button" id="eight" onclick="Noodles('H',0)" class="btn btn-primary press eight" hidden>กด</button>
+        <button type="button" id="nine" onclick="Noodles('I',0)" class="btn btn-primary press nine" hidden>กด</button>
+        <button type="button" id="ten" onclick="Noodles('J',0)" class="btn btn-primary press ten" hidden>กด</button>
+        <button type="button" id="eleven" onclick="Noodles('K',0)" class="btn btn-primary press eleven"
+            hidden>กด</button>
+        <button type="button" id="twelve" onclick="Noodles('L',0)" class="btn btn-primary press twelve"
+            hidden>กด</button>
+        <button type="button" id="cancel" onclick="Noodles('N',0)" class="btn btn-danger Cancel" hidden>Cancel</button>
+        <button type="button" id="confirm" onclick="Noodles('M',0)" class="btn btn-primary Confirm" hidden>Confirm
+            Order</button>
+
+
+        <p id="selNoodle" class="display" hidden>เส้นที่เลือก : </p>
+        <p id="selFav" class="display" hidden>รสชาติที่เลือก : </p>
+        <p id="selOpt1" class="display" hidden>เครื่องที่เลือก1 : </p>
+        <p id="selOpt2" class="display" hidden>เครื่องที่เลือก2 : </p>
+        <p id="selBoil" class="display" hidden>การต้มที่เลือก : </p>
+
+    </div>
+    <div id="block2">
+        <h1 id="title">Mama Machine</h1>
+        <h3 class="member">รายชื่อสมาชิก</h3>
+        <p class="detailmem">นายกษิฐิ์เดช อมรทิพย์วงศ์ 60010038<br>
+            นายนวิษ สัจจาดี 60010521<br>
+            นายปิยพัทธ์ ฤกษ์การันต์ 60010617<br>
+            นางสาวปิยรัตน์ เพียรอดวงษ์ 60010620<br>
+            นางสาวพิชามลหุ์ โพธิ์ทอง 60010710</p>
+        <button type="button" onclick="guide()" class="btn btn-primary guide">วิธีใช้</button>
+        <img id="howto" src="howto_0.jpg" hidden>
+        <img id="close" src="close.png" onclick="closes()" hidden>
+    </div>
+    <div id="block3">
+        <h2 id="input">Input</h2>
+        <input class="form-control" id="inputmama" type="text" placeholder="Default input">
+        <button id="submitInput" type="submit" onclick="inputtest()" class="btn btn-primary">Submit</button>
+    </div>
+    <div id="block4">
+        <img class="zoomout" onclick="zoomout()" id="zoomout" src="zoomout.png" hidden>
+        <h2 id="dfa">Deterministic Finite Automata</h2>
+        <img class="picdfa"  src="DFA.png">
+        <img class="picdfa" id="mama" src="A.png" hidden>
+        <img class="picdfa" id="udon" src="B.png" hidden>
+        <img class="picdfa" id='ori' src="C.png" hidden>
+        <img class="picdfa" id="tomyum" src="D.png" hidden>
+        <img class="picdfa" id="curry" src="E.png" hidden>
+        <img class="picdfa" id="shrimp1" src="F1.png" hidden>
+        <img class="picdfa" id="spring1" src="G1.png" hidden>
+        <img class="picdfa" id="egg1" src="H1.png" hidden>
+        <img class="picdfa" id="pork1" src="I1.png" hidden>
+        <img class="picdfa" id="cheese1" src="J1.png" hidden>
+        <img class="picdfa" id="shrimp2" src="F2.png" hidden>
+        <img class="picdfa" id="spring2" src="G2.png" hidden>
+        <img class="picdfa" id="egg2" src="H2.png" hidden>
+        <img class="picdfa" id="pork2" src="I2.png" hidden>
+        <img class="picdfa" id="cheese2" src="J2.png" hidden>
+        <img class="picdfa" id="boil" src="K.png" hidden>
+        <img class="picdfa" id="notboil" src="L.png" hidden>
+        <img class="picdfa" id="returnmama" src="M.png" hidden>
+        <img class="picdfa" id="trap" src="T.png" hidden>
+        <img class="zoomin" onclick="zoomin()" id="zoomin" src="zoomin.png" >
+        
+    </div>
+
+    <script>
+        var state = 0;
+        var count = 0;
+        var receipt = '';
+        var pre = '';
+        function zoomin(){
+            for(x of document.getElementsByClassName("picdfa")){
+                x.style.top = "0px";
+                x.style.left = "0px";
+                x.style.width = "1350px";
+                x.style.height = "1080px";
+                x.style.zIndex = "1";
+            }
+            document.getElementById("zoomin").hidden=true;
+            document.getElementById("zoomout").hidden=false;
+            document.getElementById("zoomout").style.zIndex="2";
+        }
+        function zoomout(){
+            for(x of document.getElementsByClassName("picdfa")){
+                x.style.top = "350px";
+                x.style.left = "520px";
+                x.style.width = "830px";
+                x.style.height = "650px";
+                x.style.zIndex = "-1";
+            }
+            document.getElementById("zoomin").hidden=false;
+            document.getElementById("zoomout").hidden=true;
+        }
+        function checkprev(prev, curr, pos) {
+            var i;
+            var valueinput = document.getElementById("inputmama").value;
+            for (i = 0; i < pos; i++) {
+
+            }
+
+        }
+        function resetmama() {
+            document.getElementById("one").hidden = false;
+            document.getElementById("two").hidden = false;
+            document.getElementById("three").hidden = true;
+            document.getElementById("four").hidden = true;
+            document.getElementById("five").hidden = true;
+            document.getElementById("six").hidden = true;
+            document.getElementById("seven").hidden = true;
+            document.getElementById("eight").hidden = true;
+            document.getElementById("nine").hidden = true;
+            document.getElementById("ten").hidden = true;
+            document.getElementById("eleven").hidden = true;
+            document.getElementById("twelve").hidden = true;
+
+            document.getElementById("one").disabled = false;
+            document.getElementById("two").disabled = false;
+            document.getElementById("three").disabled = false;
+            document.getElementById("four").disabled = false;
+            document.getElementById("five").disabled = false;
+            document.getElementById("six").disabled = false;
+            document.getElementById("seven").disabled = false;
+            document.getElementById("eight").disabled = false;
+            document.getElementById("nine").disabled = false;
+            document.getElementById("ten").disabled = false;
+            document.getElementById("eleven").disabled = false;
+            document.getElementById("twelve").disabled = false;
+
+            document.getElementById("mama").hidden = true;
+            document.getElementById("udon").hidden = true;
+            document.getElementById("ori").hidden = true;
+            document.getElementById("tomyum").hidden = true;
+            document.getElementById("curry").hidden = true;
+            document.getElementById("udon").hidden = true;
+            document.getElementById("shrimp1").hidden = true;
+            document.getElementById("spring1").hidden = true;
+            document.getElementById("egg1").hidden = true;
+            document.getElementById("pork1").hidden = true;
+            document.getElementById("cheese1").hidden = true;
+            document.getElementById("shrimp2").hidden = true;
+            document.getElementById("spring2").hidden = true;
+            document.getElementById("egg2").hidden = true;
+            document.getElementById("pork2").hidden = true;
+            document.getElementById("cheese2").hidden = true;
+            document.getElementById("notboil").hidden = true;
+            document.getElementById("boil").hidden = true;
+            document.getElementById("returnmama").hidden = true;
+
+
+            document.getElementById("selNoodle").hidden = true;
+            document.getElementById("selNoodle").innerHTML = "เส้นที่เลือก : ";
+            document.getElementById("selFav").hidden = true;
+            document.getElementById("selFav").innerHTML = "รสชาติที่เลือก : ";
+            document.getElementById("selOpt1").hidden = true;
+            document.getElementById("selOpt1").innerHTML = "เครื่องที่เลือก1 : ";
+            document.getElementById("selOpt2").hidden = true;
+            document.getElementById("selOpt2").innerHTML = "เครื่องที่เลือก2 : ";
+            document.getElementById("selBoil").hidden = true;
+            document.getElementById("selBoil").innerHTML = "การต้มที่เลือก : ";
+
+            document.getElementById("confirm").hidden = true;
+            document.getElementById("cancel").hidden = true;
+            document.getElementById("trap").hidden = true;
+            receipt = '';
+            count = 0;
+        }
+
+        function resetDFA() {
+            document.getElementById("mama").hidden = true;
+            document.getElementById("udon").hidden = true;
+            document.getElementById("ori").hidden = true;
+            document.getElementById("tomyum").hidden = true;
+            document.getElementById("curry").hidden = true;
+            document.getElementById("udon").hidden = true;
+            document.getElementById("shrimp1").hidden = true;
+            document.getElementById("spring1").hidden = true;
+            document.getElementById("egg1").hidden = true;
+            document.getElementById("pork1").hidden = true;
+            document.getElementById("cheese1").hidden = true;
+            document.getElementById("shrimp2").hidden = true;
+            document.getElementById("spring2").hidden = true;
+            document.getElementById("egg2").hidden = true;
+            document.getElementById("pork2").hidden = true;
+            document.getElementById("cheese2").hidden = true;
+            document.getElementById("notboil").hidden = true;
+            document.getElementById("boil").hidden = true;
+            document.getElementById("returnmama").hidden = true;
+        }
+        function inputtest() {
+            var valueinput = document.getElementById("inputmama").value;
+            var i = 0;
+            var x;
+            state = 0;
+            resetmama();
+
+            for (x of valueinput) {
+                if (state == 1) {
+                    console.log("trap");
+                    break;
+                }
+                console.log("nottrap")
+                if (valueinput[i - 1] == 'A' || valueinput[i - 1] == 'B') {
+
+                    if ("AB".includes(x)) {
+                        console.log(i += ' Going to trap A');
+                        Noodles('T', 1);
+                    }
+                }
+                if ("CDE".includes(valueinput[i-1])) {
+
+                    if ("CDE".includes(x)) {
+                        console.log(i += ' Going to trap');
+                        Noodles('T', 1);
+                    }
+                }
+                if ("FGHIJ".includes(valueinput[i-2])) {
+
+                    if ("FGHIJ".includes(valueinput[i-1])) {
+                        if("FGHIJ".includes(x)){
+                        console.log(i += ' Going to trap');
+                        Noodles('T', 1);
+                        }
+                    }
+                }
+                if("KL".includes(valueinput[i-1])){
+                    if("KL".includes(x)){
+                        console.log(i += ' Going to trap');
+                        Noodles('T', 1);
+                    }
+                }
+                if("AB".includes(x)){
+                    if("CDEFGHIKL".includes(valueinput[i-1])){
+                        console.log(i += ' Going to trap');
+                        Noodles('T', 1);
+                    }
+
+                }
+                if("CDE".includes(x)){
+                    if("FGHIJKLMN".includes(valueinput[i-1])){
+                        console.log(i += ' Going to trap');
+                        Noodles('T', 1);
+                    }
+
+                }
+                if("FGHIJ".includes(x)){
+                    if("ABKLMN".includes(valueinput[i-1])){
+                        console.log(i += ' Going to trap');
+                        Noodles('T', 1);
+                    }
+
+                }
+                if("KL".includes(x)){
+                    console.log("K trap");
+                    if("ABCDEKL".includes(valueinput[i-1])){
+                        console.log(i += ' Going to trap');
+                        Noodles('T', 1);
+                    }
+                    if("FGHIJ".includes(valueinput[i-1])){
+                        if("ABCDEKL".includes(valueinput[i-2])){
+                            
+                            console.log(i += ' Going to trap');
+                            Noodles('T', 1);
+                        }
+                    }
+                }
+                if("M".includes(x)){
+                    if("ABCDEFGHIJ".includes(valueinput[i-1])){
+                        console.log(i += ' Going to trap');
+                        Noodles('T', 1);
+                    }
+
+                }
+                Noodles(x, 1);
+                i++;
+            }
+
+        }
     
-    <form>
-        <div class="form-group">
-          <label for="exampleInputEmail1">Email address</label>
-          <input type="email" class="form-control" id="exampleInputEmail1" aria-describedby="emailHelp" placeholder="Enter email">
-          <small id="emailHelp" class="form-text text-muted">We'll never share your email with anyone else.</small>
-        </div>
-        <div class="form-group">
-          <label for="exampleInputPassword1">Password</label>
-          <input type="password" class="form-control" id="exampleInputPassword1" placeholder="Password">
-        </div>
-        <div class="form-group form-check">
-          <input type="checkbox" class="form-check-input" id="exampleCheck1">
-          <label class="form-check-label" for="exampleCheck1">Check me out</label>
-        </div>
-        <button type="submit" class="btn btn-primary">Submit</button>
-      </form>
+        function Noodles(num, check) {
+            if (check == 0) {
+                document.getElementById("inputmama").value += num;
+            }
+            if (check == 1) {
+                if (num == 'T') {
+                    console.log("Noodle Trap"+num)
+                    document.getElementById("trap").hidden = false;
+                    state = 1;
 
-    <script src="https://code.jquery.com/jquery-3.3.1.slim.min.js" integrity="sha384-q8i/X+965DzO0rT7abK41JStQIAqVgRVzpbzo5smXKp4YfRvH+8abtTE1Pi6jizo" crossorigin="anonymous"></script>
-    <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.14.7/umd/popper.min.js" integrity="sha384-UO2eT0CpHqdSJQ6hJty5KVphtPhzWj9WO1clHTMGa3JDZwrnQq4sF86dIHNDz0W1" crossorigin="anonymous"></script>
-    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/js/bootstrap.min.js" integrity="sha384-JjSmVgyd0p3pXB1rRibZUAYoIIy6OrQ6VrjIEaFf/nJGzIxFDsf4x0xIM+B07jRM" crossorigin="anonymous"></script>
+                }
 
 
+            }
+
+            if(state == 0){
+
+            
+            if (num == 'A' || num == 'B') {
+
+                resetDFA();
+
+                if (num == 'A') {
+                    document.getElementById("one").disabled = true;
+                    document.getElementById("two").hidden = true;
+                    document.getElementById("mama").hidden = false;
+                    receipt += 'เส้นที่เลือก : เส้นมาม่า\n';
+                    document.getElementById("selNoodle").hidden = false;
+                    document.getElementById("selNoodle").innerHTML += "เส้นมาม่า";
+
+                }
+                else {
+                    document.getElementById("two").disabled = true;
+                    document.getElementById("one").hidden = true;
+                    document.getElementById("udon").hidden = false;
+                    receipt += 'เส้นที่เลือก : เส้นอูด้ง\n';
+                    document.getElementById("selNoodle").hidden = false;
+                    document.getElementById("selNoodle").innerHTML += "เส้นอูด้ง";
+
+                }
+                document.getElementById("cancel").hidden = false;
+
+                document.getElementById("three").hidden = false;
+                document.getElementById("four").hidden = false;
+                document.getElementById("five").hidden = false;
+            }
+            if (num == 'C' || num == 'D' || num == 'E') {
+                if (num == 'C') {
+                    document.getElementById("three").disabled = true;
+                    document.getElementById("four").hidden = true;
+                    document.getElementById("five").hidden = true;
+                    document.getElementById("ori").hidden = false;
+                    receipt += 'รสชาติที่เลือก : รสดั้งเดิม\n';
+                    document.getElementById("selFav").hidden = false;
+                    document.getElementById("selFav").innerHTML += "รสดั้งเดิม";
+                }
+                else if (num == 'D') {
+                    document.getElementById("four").disabled = true;
+                    document.getElementById("three").hidden = true;
+                    document.getElementById("five").hidden = true;
+                    document.getElementById("tomyum").hidden = false;
+                    receipt += 'รสชาติที่เลือก : รสต้มยำกุ้ง\n';
+                    document.getElementById("selFav").hidden = false;
+                    document.getElementById("selFav").innerHTML += "รสต้มยำกุ้ง";
+                } else {
+                    document.getElementById("five").disabled = true;
+                    document.getElementById("three").hidden = true;
+                    document.getElementById("four").hidden = true;
+                    document.getElementById("curry").hidden = false;
+                    receipt += 'รสชาติที่เลือก : รสแกงกะหรี่\n';
+                    document.getElementById("selFav").hidden = false;
+                    document.getElementById("selFav").innerHTML += "รสแกงกะหรี่";
+                }
+                document.getElementById("six").hidden = false;
+                document.getElementById("seven").hidden = false;
+                document.getElementById("eight").hidden = false;
+                document.getElementById("nine").hidden = false;
+                document.getElementById("ten").hidden = false;
+
+            }
+            if (num == 'F' || num == 'G' || num == 'H' || num == 'I' || num == 'J') {
+                if (num == 'F') {
+                    count += 1;
+                    if (count == 1) {
+                        document.getElementById("shrimp1").hidden = false;
+                        prev = "six";
+                        receipt += 'เครื่องที่เลือก1 : กุ้ง\n';
+                        document.getElementById("selOpt1").hidden = false;
+                        document.getElementById("selOpt1").innerHTML += "กุ้ง";
+
+                    }
+                    else if (count == 2) {
+                        document.getElementById("six").disabled = true;
+                        document.getElementById("seven").hidden = true;
+                        document.getElementById("eight").hidden = true;
+                        document.getElementById("nine").hidden = true;
+                        document.getElementById("ten").hidden = true;
+                        document.getElementById("shrimp2").hidden = false;
+                        document.getElementById(prev).hidden = false;
+                        document.getElementById(prev).disabled = true;
+                        receipt += 'เครื่องที่เลือก2 : กุ้ง\n';
+                        document.getElementById("selOpt2").hidden = false;
+                        document.getElementById("selOpt2").innerHTML += "กุ้ง";
+                    }
+
+                }
+                else if (num == 'G') {
+                    count += 1;
+                    if (count == 1) {
+                        document.getElementById("spring1").hidden = false;
+                        prev = "seven";
+                        receipt += 'เครื่องที่เลือก1 : ต้นหอม\n';
+                        document.getElementById("selOpt1").hidden = false;
+                        document.getElementById("selOpt1").innerHTML += "ต้นหอม";
+                    }
+                    else if (count == 2) {
+                        document.getElementById("seven").disabled = true;
+                        document.getElementById("six").hidden = true;
+                        document.getElementById("eight").hidden = true;
+                        document.getElementById("nine").hidden = true;
+                        document.getElementById("ten").hidden = true;
+                        document.getElementById("spring2").hidden = false;
+                        document.getElementById(prev).hidden = false;
+                        document.getElementById(prev).disabled = true;
+
+                        receipt += 'เครื่องที่เลือก2 : ต้นหอม\n';
+                        document.getElementById("selOpt2").hidden = false;
+                        document.getElementById("selOpt2").innerHTML += "ต้นหอม";
+                    }
+
+
+                }
+                else if (num == 'H') {
+                    count += 1;
+                    if (count == 1) {
+                        document.getElementById("egg1").hidden = false;
+                        prev = "eight";
+                        receipt += 'เครื่องที่เลือก1 : ไข่\n';
+                        document.getElementById("selOpt1").hidden = false;
+                        document.getElementById("selOpt1").innerHTML += "ไข่";
+                    }
+                    else if (count == 2) {
+                        document.getElementById("eight").disabled = true;
+                        document.getElementById("six").hidden = true;
+                        document.getElementById("seven").hidden = true;
+                        document.getElementById("nine").hidden = true;
+                        document.getElementById("ten").hidden = true;
+                        document.getElementById("egg2").hidden = false;
+                        document.getElementById(prev).hidden = false;
+                        document.getElementById(prev).disabled = true;
+                        receipt += 'เครื่องที่เลือก2 : ไข่\n';
+                        document.getElementById("selOpt2").hidden = false;
+                        document.getElementById("selOpt2").innerHTML += "ไข่";
+                    }
+
+
+                }
+                else if (num == 'I') {
+                    count += 1;
+                    if (count == 1) {
+                        document.getElementById("pork1").hidden = false;
+                        prev = "nine";
+                        receipt += 'เครื่องที่เลือก1 : หมู\n';
+                        document.getElementById("selOpt1").hidden = false;
+                        document.getElementById("selOpt1").innerHTML += "หมู";
+                    }
+                    else if (count == 2) {
+                        document.getElementById("nine").disabled = true;
+                        document.getElementById("six").hidden = true;
+                        document.getElementById("seven").hidden = true;
+                        document.getElementById("eight").hidden = true;
+                        document.getElementById("ten").hidden = true;
+                        document.getElementById("pork2").hidden = false;
+                        document.getElementById(prev).hidden = false;
+                        document.getElementById(prev).disabled = true;
+                        receipt += 'เครื่องที่เลือก2 : หมู\n';
+                        document.getElementById("selOpt2").hidden = false;
+                        document.getElementById("selOpt2").innerHTML += "หมู";
+                    }
+
+                }
+                else {
+                    count += 1;
+                    if (count == 1) {
+                        document.getElementById("cheese1").hidden = false;
+                        prev = "ten";
+                        receipt += 'เครื่องที่เลือก2 : ชีส\n';
+                        document.getElementById("selOpt1").hidden = false;
+                        document.getElementById("selOpt1").innerHTML += "ชีส";
+                    }
+                    else if (count == 2) {
+                        document.getElementById("ten").disabled = true;
+                        document.getElementById("six").hidden = true;
+                        document.getElementById("seven").hidden = true;
+                        document.getElementById("eight").hidden = true;
+                        document.getElementById("nine").hidden = true;
+                        document.getElementById("cheese2").hidden = false;
+                        document.getElementById(prev).hidden = false;
+                        document.getElementById(prev).disabled = true;
+                        receipt += 'เครื่องที่เลือก2 : ชีส\n';
+                        document.getElementById("selOpt2").hidden = false;
+                        document.getElementById("selOpt2").innerHTML += "ชีส";
+                    }
+
+                }
+                if (count == 2) {
+                    document.getElementById("eleven").hidden = false;
+                    document.getElementById("twelve").hidden = false;
+                }
+
+            }
+            else if (num == 'K' || num == 'L') {
+                if (num == 'K') {
+                    document.getElementById("notboil").hidden = false;
+                    document.getElementById("eleven").disabled = true;
+                    document.getElementById("twelve").hidden = true;
+                    receipt += 'การต้มที่เลือก : ไม่ต้ม\n';
+                    document.getElementById("selBoil").hidden = false;
+                    document.getElementById("selBoil").innerHTML += "ไม่ต้ม";
+                }
+                else {
+                    document.getElementById("boil").hidden = false;
+                    document.getElementById("twelve").disabled = true;
+                    document.getElementById("eleven").hidden = true;
+                    receipt += 'การต้มที่เลือก : ต้ม\n';
+                    document.getElementById("selBoil").hidden = false;
+                    document.getElementById("selBoil").innerHTML += "ต้ม";
+
+                }
+                document.getElementById("confirm").hidden = false;
+            }
+            else if (num == 'N') {
+                var result = confirm("ต้องการยกเลิกการสั่งอาหารหรือไม่");
+                if (result) {
+                    resetmama()
+                }
+
+            }
+            else if (num == 'M') {
+                var result = confirm(receipt);
+                if (result) {
+                    document.getElementById("returnmama").hidden = false;
+                    document.getElementById("one").hidden = false;
+                    document.getElementById("two").hidden = false;
+                    document.getElementById("three").hidden = true;
+                    document.getElementById("four").hidden = true;
+                    document.getElementById("five").hidden = true;
+                    document.getElementById("six").hidden = true;
+                    document.getElementById("seven").hidden = true;
+                    document.getElementById("eight").hidden = true;
+                    document.getElementById("nine").hidden = true;
+                    document.getElementById("ten").hidden = true;
+                    document.getElementById("eleven").hidden = true;
+                    document.getElementById("twelve").hidden = true;
+
+                    document.getElementById("one").disabled = false;
+                    document.getElementById("two").disabled = false;
+                    document.getElementById("three").disabled = false;
+                    document.getElementById("four").disabled = false;
+                    document.getElementById("five").disabled = false;
+                    document.getElementById("six").disabled = false;
+                    document.getElementById("seven").disabled = false;
+                    document.getElementById("eight").disabled = false;
+                    document.getElementById("nine").disabled = false;
+                    document.getElementById("ten").disabled = false;
+                    document.getElementById("eleven").disabled = false;
+                    document.getElementById("twelve").disabled = false;
+
+
+                    document.getElementById("selNoodle").hidden = true;
+                    document.getElementById("selNoodle").innerHTML = "เส้นที่เลือก : ";
+                    document.getElementById("selFav").hidden = true;
+                    document.getElementById("selFav").innerHTML = "รสชาติที่เลือก : ";
+                    document.getElementById("selOpt1").hidden = true;
+                    document.getElementById("selOpt1").innerHTML = "เครื่องที่เลือก1 : ";
+                    document.getElementById("selOpt2").hidden = true;
+                    document.getElementById("selOpt2").innerHTML = "เครื่องที่เลือก2 : ";
+                    document.getElementById("selBoil").hidden = true;
+                    document.getElementById("selBoil").innerHTML = "การต้มที่เลือก : ";
+
+                    document.getElementById("confirm").hidden = true;
+                    document.getElementById("cancel").hidden = true;
+                    receipt = '';
+                    count = 0;
+
+                }
+
+            }
+            }
+
+
+
+
+
+
+        }
+        function guide() {
+            document.getElementById('howto').hidden = false;
+            document.getElementById('close').hidden = false;
+        }
+        function closes() {
+            document.getElementById('howto').hidden = true;
+            document.getElementById('close').hidden = true;
+        }
+    </script>
 </body>
+
 </html>
